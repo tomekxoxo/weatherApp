@@ -52,6 +52,7 @@ function changeUnits() {
         then(data => {
           ui.draw(data,'f')
         })
+      
     }
     getLocation();
     button.innerText = 'C'
@@ -76,6 +77,7 @@ function changeUnits() {
         then(data => {
           ui.draw(data)
         })
+      
     }
     getLocation();
     button.innerText = 'F';
@@ -86,11 +88,14 @@ var slider = tns({
   items: 3,
   slideBy: 'page',
   mode: 'carousel',
-  items: 3,
   autoWidth: true,
   controls: false,
   mouseDrag: true,
-  nav:false,
   loop: false,
-  
+  rewind: true,
+  autoplay: true,
+  autoplayHoverPause: true,
+  nav: false,
+  autoplayButtonOutput: false,
+  autoplayTimeout:2500
 });

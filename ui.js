@@ -23,7 +23,7 @@ class Ui{
   }
   drawForecast(data) {
     const tab = data.list;
-    for (let i = 1; i <= 10; i++){
+    for (let i = 1; i < 40; i++){
       let div = document.querySelector(`.forecast-${i}`);
       let hour = document.createElement('h1');
       let icon = tab[i].weather[0].icon;
