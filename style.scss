@@ -7,6 +7,7 @@
   box-sizing: border-box;
 }
 $blue: #304675;
+$lightBlue: #38538d;
 $lightGrey: #f9f9f9;
 $white: #fdfdfd;
 html {
@@ -14,6 +15,8 @@ html {
   font-family: "Merriweather Sans", sans-serif;
 }
 body {
+  width: 100%;
+  height: 100vh;
   background-color: $lightGrey;
 }
 .container {
@@ -84,9 +87,23 @@ body {
 
 main{
   width: 100%;
-  min-height: 60vh;
+  height: 60vh;
   .body{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $white;
+      z-index: -1;
+      top: -50%;
+      left: 0;
+    }
     .conditions{
+      height: 100%;
       .container{
         padding-top: 0;
         padding: 0 0;
@@ -122,6 +139,27 @@ main{
               padding-top: .5rem;
               background-color: white;
               height: 35%;
+            }
+          }
+        }
+        .my-slider{
+          width: 100vw;
+          height: 100%;
+          background-color: #eee;
+          div{
+            width: 30%;
+            height: 23rem;
+            background-color: $lightBlue;
+            border-radius: 1rem;
+            padding-top: 20px;
+            color: #fff;
+            
+            h1{
+              text-align: center;
+            }
+            img{
+              width: 100%;
+              max-width: 100%;
             }
           }
         }

@@ -1,6 +1,5 @@
 class Ui{
   draw(data, unit) {
-    console.log(data);
     const city = document.querySelector('.city');
     const country = document.querySelector('.country-name');
     const icon = document.querySelector('.temp-icon');
@@ -21,5 +20,16 @@ class Ui{
       wind.innerText = `${data.wind.speed} mph`;
     }
     
+  }
+  drawForecast(data) {
+    const tab = data.list;
+    for (let i = 1; i <= 10; i++){
+      let div = document.querySelector(`.forecast-${i}`);
+      let hour = document.createElement('h1');
+      let icon = tab[i].weather[0].icon;
+      div.innerHTML = `<h1>${tab[i].dt_txt.substring(5,16)}</h1>`;
+      div.innerHTML += `<img src= 'http://openweathermap.org/img/wn/${icon}@2x.png'>`;
+      div.innerHTML += `<h1>${Math.round(tab[i].main.temp)}&#8451;</h1>`
+    }
   }
 }

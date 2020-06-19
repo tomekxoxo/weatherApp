@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
       then(data => {
         ui.draw(data)
       })
-    // weather.apiForecast(lat, long).
-    //   then(data=>{console.log(data)})
+    weather.apiForecast(lat, long).
+      then(data=> ui.drawForecast(data))
   }
   getLocation()
   
@@ -81,3 +81,16 @@ function changeUnits() {
     button.innerText = 'F';
   }
 }
+var slider = tns({
+  container: '.my-slider',
+  items: 3,
+  slideBy: 'page',
+  mode: 'carousel',
+  items: 3,
+  autoWidth: true,
+  controls: false,
+  mouseDrag: true,
+  nav:false,
+  loop: false,
+  
+});
