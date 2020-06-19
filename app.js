@@ -1,7 +1,10 @@
 const weather = new Weather()
+const ui = new Ui();
+const button = document.querySelector('.units');
+
 document.addEventListener('DOMContentLoaded', () => {
   function error() {
-    
+    console.log(new Error('some issue'));
   }
   function getLocation() {
     if (navigator.geolocation) {
@@ -11,13 +14,70 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   
+  button.innerText = 'F';
   function showPosition(position) {
     const lat = position.coords.latitude ;
     const long = position.coords.longitude ;
     weather.apiByGeo(lat, long).
       then(data => {
-        console.log(data)
+        ui.draw(data)
       })
+    // weather.apiForecast(lat, long).
+    //   then(data=>{console.log(data)})
   }
   getLocation()
+  
 })
+
+button.addEventListener('click', changeUnits);
+function changeUnits() {
+  if (button.innerText == 'F') {
+    
+    function error() {
+      console.log(new Error('some issue'));
+    }
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition,error,{enableHighAccuracy:true});
+      } else {
+        console.log('Geolocation is not supported by this browser');
+      }
+    }
+    
+    
+    function showPosition(position) {
+      const lat = position.coords.latitude ;
+      const long = position.coords.longitude ;
+      weather.apiByGeo(lat, long, 'imperial').
+        then(data => {
+          ui.draw(data,'f')
+        })
+    }
+    getLocation();
+    button.innerText = 'C'
+  }
+  else {
+    function error() {
+      console.log(new Error('some issue'));
+    }
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition,error,{enableHighAccuracy:true});
+      } else {
+        console.log('Geolocation is not supported by this browser');
+      }
+    }
+    
+    button.innerText = 'C'
+    function showPosition(position) {
+      const lat = position.coords.latitude ;
+      const long = position.coords.longitude ;
+      weather.apiByGeo(lat, long, 'metric').
+        then(data => {
+          ui.draw(data)
+        })
+    }
+    getLocation();
+    button.innerText = 'F';
+  }
+}

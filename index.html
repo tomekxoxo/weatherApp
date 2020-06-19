@@ -3,14 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Weather App</title>
+    <link rel="shortcut icon" href=".//favicon.ico"/>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    
-
+    <header class="header">
+      <div class="container">
+        <div class="country">
+          <div class="country-wrapper">
+            <h1 class="city"></h1>
+            <h2 class="country-name"></h2>
+          </div>
+          <button class="units"></button>
+        </div>
+        <div class="temp">
+          <div class="temp-icon"></div>
+          <div class="temp-current"></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="body">
+        <div class="conditions">
+          <div class="container">
+            <div class="conditions-wrapper">
+              <div class="condition"><i class="fas fa-wind"></i><span class="wind"></span></div>
+              <div class="condition"><i class="fas fa-cloud"></i><span class="humidity"></span></div>
+              <div class="condition"><img src="pressure.png" alt=""><span class="pressure"></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <script src="api.js" defer></script>
     <script src="ui.js" defer></script>
