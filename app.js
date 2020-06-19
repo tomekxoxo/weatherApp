@@ -97,5 +97,5 @@ var slider = tns({
   autoplayHoverPause: true,
   nav: false,
   autoplayButtonOutput: false,
-  autoplayTimeout:2500
+  autoplayTimeout:5000
 });

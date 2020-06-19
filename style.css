@@ -75,7 +75,7 @@ body {
 
 main {
   width: 100%;
-  height: 60vh; }
+  height: 55vh; }
   main .body {
     width: 100%;
     height: 100%;
@@ -128,7 +128,7 @@ main {
           background-color: #eee; }
           main .body .conditions .container .my-slider div {
             width: 30%;
-            height: 23rem;
+            height: 22rem;
             background-color: #38538d;
             border-radius: 1rem;
             padding-top: 20px;
