@@ -27,9 +27,8 @@ class Ui{
       let div = document.querySelector(`.forecast-${i}`);
       let hour = document.createElement('h1');
       let icon = tab[i].weather[0].icon;
-      let day = new Date(tab[i].dt_txt.substring(5, 16)).getDay();
-      console.log(day);
-      const days = { 0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 4: 'Friday', 5: 'Saturday' };
+      let day = new Date(tab[i].dt_txt).getDay();
+      const days = { 0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday' };
       for (let x in days) {
         if (day == x) {
          
