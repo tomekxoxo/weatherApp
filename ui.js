@@ -23,11 +23,20 @@ class Ui{
   }
   drawForecast(data) {
     const tab = data.list;
-    for (let i = 1; i < 40; i++){
+    for (let i = 1; i < tab.length; i++){
       let div = document.querySelector(`.forecast-${i}`);
       let hour = document.createElement('h1');
       let icon = tab[i].weather[0].icon;
-      div.innerHTML = `<h1>${tab[i].dt_txt.substring(5,16)}</h1>`;
+      let day = new Date(tab[i].dt_txt.substring(5, 16)).getDay();
+      console.log(day);
+      const days = { 0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 4: 'Friday', 5: 'Saturday' };
+      for (let x in days) {
+        if (day == x) {
+         
+          div.innerHTML = `<h1>${days[x]}</h1>`;
+        }
+      }
+      div.innerHTML += `<h1>${tab[i].dt_txt.substring(5,16)}</h1>`;
       div.innerHTML += `<img src= 'http://openweathermap.org/img/wn/${icon}@2x.png'>`;
       div.innerHTML += `<h1>${Math.round(tab[i].main.temp)}&#8451;</h1>`
     }
