@@ -93,9 +93,9 @@ var slider = tns({
   mouseDrag: true,
   loop: false,
   rewind: true,
-  // autoplay: true,
+  autoplay: true,
   autoplayHoverPause: true,
   nav: false,
   autoplayButtonOutput: false,
-  autoplayTimeout:5000
+  arrowKeys:true,
 });
