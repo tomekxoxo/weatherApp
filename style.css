@@ -43,15 +43,67 @@ body {
       .header .country .country-wrapper .country-name {
         color: #fdfdfd;
         font-size: 2rem; }
-    .header .country .units {
+    .header .country .burger {
       background-color: #f9f9f9;
       border: none;
-      width: 6rem;
+      width: 5rem;
       height: 5rem;
       border-radius: 2rem;
       font-size: 2rem;
       font-weight: 700;
-      cursor: pointer; }
+      cursor: pointer;
+      font-size: 3rem;
+      border-radius: 1rem;
+      z-index: 120; }
+      .header .country .burger .fa-times {
+        display: none; }
+    .header .country .nav {
+      position: fixed;
+      right: -100%;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #38538d;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .5s ease; }
+      .header .country .nav .units {
+        background-color: #f9f9f9;
+        border: none;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 2rem;
+        font-size: 2rem;
+        font-weight: 700;
+        cursor: pointer;
+        margin-right: 2rem; }
+      .header .country .nav .search-wrapper .search-input {
+        border: 5px solid #F7F7F9;
+        border-radius: .5rem;
+        width: 200px;
+        height: 5rem;
+        font-size: 2rem;
+        margin-right: -.7rem;
+        outline: none; }
+      .header .country .nav .search-wrapper .search-city {
+        background-color: #f9f9f9;
+        border: none;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 2rem;
+        font-size: 2rem;
+        font-weight: 700;
+        cursor: pointer;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0; }
+    .header .country .nav.toggle {
+      transform: translateX(-100%); }
+    .header .country .burger.toggle .fa-bars {
+      display: none; }
+    .header .country .burger.toggle .fa-times {
+      display: block; }
   .header .temp {
     width: 100%;
     height: 50%;
@@ -81,7 +133,7 @@ main {
     height: 100%;
     position: relative; }
     main .body::before {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       height: 100%;
@@ -139,3 +191,39 @@ main {
             main .body .conditions .container .my-slider div img {
               width: 95%;
               max-width: 100%; }
+
+@media screen and (min-width: 700px) {
+  .burger {
+    display: none; }
+  .nav {
+    position: static;
+    width: initial;
+    height: 100%; }
+    .nav .search-input {
+      border: 5px solid #F7F7F9;
+      border-radius: .5rem;
+      width: 200px;
+      height: 5rem;
+      font-size: 2rem;
+      margin-right: -.7rem;
+      outline: none; }
+    .nav .search-city {
+      background-color: #f9f9f9;
+      border: none;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+      cursor: pointer;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0; }
+    .nav .units {
+      background-color: #f9f9f9;
+      border: none;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+      cursor: pointer; } }

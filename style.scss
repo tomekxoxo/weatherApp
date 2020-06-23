@@ -9,7 +9,19 @@
 $blue: #304675;
 $lightBlue: #38538d;
 $lightGrey: #f9f9f9;
+$grey: #F7F7F9;
 $white: #fdfdfd;
+@mixin button {
+  background-color: $lightGrey;
+  border: none;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  
+}
 html {
   font-size: 10px;
   font-family: "Merriweather Sans", sans-serif;
@@ -50,15 +62,60 @@ body {
         font-size: 2rem;
       }
     }
-    .units {
-      background-color: $lightGrey;
-      border: none;
-      width: 6rem;
-      height: 5rem;
-      border-radius: 2rem;
-      font-size: 2rem;
-      font-weight: 700;
-      cursor: pointer;
+    .burger{
+      @include button();
+      font-size: 3rem;
+      border-radius: 1rem;
+      z-index: 120;
+      .fa-times{
+        display: none;
+      }
+    }
+    .nav {
+      position: fixed;
+      right: -100%;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: $lightBlue;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .5s ease;
+      .units {
+        @include button();
+        margin-right: 2rem;
+      }
+      .search-wrapper{
+        .search-input {
+          border: 5px solid $grey;
+          border-radius: .5rem;
+          width: 200px;
+          height: 5rem;
+          font-size: 2rem;
+          margin-right: -.7rem;
+          outline: none;
+        }
+        .search-city {
+          @include button();
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+      
+    }
+    .nav.toggle{
+      transform: translateX(-100%);
+      
+    }
+    .burger.toggle{
+      .fa-bars{
+        display: none;
+      }
+      .fa-times{
+        display: block;
+      }
     }
   }
   .temp {
@@ -86,15 +143,15 @@ body {
   }
 }
 
-main{
+main {
   width: 100%;
   height: 55vh;
-  .body{
+  .body {
     width: 100%;
     height: 100%;
     position: relative;
-    &::before{
-      content: '';
+    &::before {
+      content: "";
       position: absolute;
       width: 100%;
       height: 100%;
@@ -103,28 +160,27 @@ main{
       top: -50%;
       left: 0;
     }
-    .conditions{
+    .conditions {
       height: 100%;
-      .container{
+      .container {
         padding-top: 0;
         padding: 0 0;
-        .conditions-wrapper{
+        .conditions-wrapper {
           width: 100%;
           height: 25vh;
           display: flex;
           background-color: $white;
           border-bottom-left-radius: 5rem;
           padding-bottom: 2.5rem;
-          .condition{
+          .condition {
             width: 33%;
             height: 100%;
-            
+
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-end;
-            i{
-              
+            i {
               display: flex;
               align-items: center;
               font-size: 4rem;
@@ -132,39 +188,67 @@ main{
               height: 50%;
               margin-bottom: 2rem;
             }
-            span{
+            span {
               font-size: 2rem;
               font-weight: 600;
               color: $blue;
             }
-            img{
+            img {
               margin-bottom: 3.4rem;
               background-color: white;
               height: 30%;
             }
           }
         }
-        .my-slider{
+        .my-slider {
           width: 100vw;
           height: 100%;
           background-color: #eee;
-          div{
+          div {
             width: 13rem;
             height: 22rem;
             background-color: $lightBlue;
             border-radius: 1rem;
             padding-top: 20px;
             color: #fff;
-            h1{
+            h1 {
               text-align: center;
             }
-            img{
+            img {
               width: 95%;
               max-width: 100%;
             }
           }
         }
       }
+    }
+  }
+}
+@media screen and (min-width:700px){
+  .burger{
+    display: none;
+  }
+  .nav {
+    position: static;
+    width: initial;
+    height: 100%;
+
+    .search-input {
+      border: 5px solid $grey;
+      border-radius: .5rem;
+      width: 200px;
+      height: 5rem;
+      font-size: 2rem;
+      margin-right: -.7rem;
+      outline: none;
+    }
+    .search-city {
+      @include button();
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    .units {
+      @include button()
     }
   }
 }

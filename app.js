@@ -1,6 +1,8 @@
 const weather = new Weather()
 const ui = new Ui();
 const button = document.querySelector('.units');
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
 
 document.addEventListener('DOMContentLoaded', () => {
   function error() {
@@ -83,6 +85,13 @@ function changeUnits() {
     button.innerText = 'F';
   }
 }
+
+burger.addEventListener('click', slideMenu);
+function slideMenu() {
+  nav.classList.toggle('toggle');
+  burger.classList.toggle('toggle');
+}
+
 var slider = tns({
   container: '.my-slider',
   items: 3,
