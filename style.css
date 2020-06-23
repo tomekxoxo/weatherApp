@@ -196,34 +196,8 @@ main {
   .burger {
     display: none; }
   .nav {
-    position: static;
-    width: initial;
-    height: 100%; }
-    .nav .search-input {
-      border: 5px solid #F7F7F9;
-      border-radius: .5rem;
-      width: 200px;
-      height: 5rem;
-      font-size: 2rem;
-      margin-right: -.7rem;
-      outline: none; }
-    .nav .search-city {
-      background-color: #f9f9f9;
-      border: none;
-      width: 5rem;
-      height: 5rem;
-      border-radius: 2rem;
-      font-size: 2rem;
-      font-weight: 700;
-      cursor: pointer;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0; }
-    .nav .units {
-      background-color: #f9f9f9;
-      border: none;
-      width: 5rem;
-      height: 5rem;
-      border-radius: 2rem;
-      font-size: 2rem;
-      font-weight: 700;
-      cursor: pointer; } }
+    position: initial !important;
+    width: initial !important;
+    height: initial !important;
+    align-items: start !important;
+    background-color: initial !important; } }

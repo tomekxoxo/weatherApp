@@ -229,26 +229,10 @@ main {
     display: none;
   }
   .nav {
-    position: static;
-    width: initial;
-    height: 100%;
-
-    .search-input {
-      border: 5px solid $grey;
-      border-radius: .5rem;
-      width: 200px;
-      height: 5rem;
-      font-size: 2rem;
-      margin-right: -.7rem;
-      outline: none;
-    }
-    .search-city {
-      @include button();
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-    .units {
-      @include button()
-    }
+    position: initial !important;
+    width: initial !important;
+    height:initial !important;
+    align-items: start !important;
+    background-color: initial !important;   
   }
 }
