@@ -78,7 +78,6 @@ function changeCity() {
       .apiByCityName(inputText.value)
       .then((data) => {
         if (data.name !== undefined) ui.draw(data);
-        // else throw new Error('not working')
       })
       .catch((err) => console.log(err));
     weather
