@@ -63,7 +63,7 @@ body {
       top: 0;
       width: 100%;
       height: 100vh;
-      background-color: #38538d;
+      background-color: #38538dde;
       z-index: 100;
       display: flex;
       align-items: center;
@@ -175,22 +175,27 @@ main {
               margin-bottom: 3.4rem;
               background-color: white;
               height: 30%; }
-        main .body .conditions .container .my-slider {
+        main .body .conditions .container .swiper-container {
           width: 100vw;
           height: 100%;
           background-color: #eee; }
-          main .body .conditions .container .my-slider div {
-            width: 13rem;
-            height: 22rem;
+          main .body .conditions .container .swiper-container .swiper-slide {
+            height: 60%;
             background-color: #38538d;
             border-radius: 1rem;
-            padding-top: 20px;
-            color: #fff; }
-            main .body .conditions .container .my-slider div h1 {
+            padding-top: 2rem;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between; }
+            main .body .conditions .container .swiper-container .swiper-slide h1 {
               text-align: center; }
-            main .body .conditions .container .my-slider div img {
-              width: 95%;
-              max-width: 100%; }
+            main .body .conditions .container .swiper-container .swiper-slide img {
+              transform: scale(1.5); }
+            main .body .conditions .container .swiper-container .swiper-slide .slide-temp {
+              font-size: 2rem;
+              padding-bottom: 2rem; }
 
 @media screen and (min-width: 700px) {
   .burger {

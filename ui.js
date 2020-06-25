@@ -44,10 +44,10 @@ class Ui {
       div.innerHTML += `<h1>${tab[i].dt_txt.substring(5, 16)}</h1>`;
       div.innerHTML += `<img src= 'http://openweathermap.org/img/wn/${icon}@2x.png'>`;
       if (unit === 'c') {
-        div.innerHTML += `<h1>${Math.round(tab[i].main.temp)}&#8451;</h1>`;
+        div.innerHTML += `<h1 class='slide-temp'>${Math.round(tab[i].main.temp)}&#8451;</h1>`;
       }
       else {
-        div.innerHTML += `<h1>${Math.round(tab[i].main.temp)}&#8457;</h1>`;
+        div.innerHTML += `<h1 class='slide-temp'>${Math.round(tab[i].main.temp)}&#8457;</h1>`;
       }
       
     }

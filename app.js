@@ -62,19 +62,42 @@ function changeCity() {
   Ui.clearInput();
 }
 
-var slider = tns({
-  container: ".my-slider",
-  items: 3,
-  slideBy: "page",
-  mode: "carousel",
-  autoWidth: true,
-  controls: false,
-  mouseDrag: true,
-  loop: false,
-  rewind: true,
-  autoplay: true,
-  autoplayHoverPause: true,
-  nav: false,
-  autoplayButtonOutput: false,
-  arrowKeys: true,
-});
+var mySwiper = new Swiper('.swiper-container', {
+  direction: 'horizontal',
+  spaceBetween: 20,
+  slidesPerView: 8,
+  grabCursor: true,
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      
+    },
+    480: {
+      slidesPerView: 3,
+      
+    },
+    640: {
+      slidesPerView: 4,
+    },
+    800: {
+      slidesPerView: 5,
+      
+    },
+    960: {
+      slidesPerView: 6,
+      
+    },
+    1120: {
+      slidesPerView: 7,
+      
+    },
+    1280: {
+      slidesPerView: 8,
+      
+    },
+    1400: {
+      slidesPerView: 9,
+      
+    }
+  }
+})
