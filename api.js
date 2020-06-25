@@ -12,8 +12,13 @@ class Weather{
     const res = await req.json()
     return res
   }
+  async apiForecastbyCityName(name, units= 'metric') {
+    const req = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${name}&units=${units}&appid=${this.apiKey}`)
+    const res = await req.json()
+    return res
+  }
   async apiByCityName(name, units = 'metric') {
-    const req = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${name}&units${units}&appid=${this.apiKey}`)
+    const req = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${name}&units=${units}&appid=${this.apiKey}`)
     const res = await req.json()
     return res
   }
