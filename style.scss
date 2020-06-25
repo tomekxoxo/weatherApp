@@ -219,7 +219,8 @@ main {
               text-align: center;
             }
             img {
-              
+              transform: scale(1.5);
+              z-index: 200;
             }
             .slide-temp{
               font-size: 2rem;

@@ -191,6 +191,9 @@ main {
             justify-content: space-between; }
             main .body .conditions .container .swiper-container .swiper-slide h1 {
               text-align: center; }
+            main .body .conditions .container .swiper-container .swiper-slide img {
+              transform: scale(1.5);
+              z-index: 200; }
             main .body .conditions .container .swiper-container .swiper-slide .slide-temp {
               font-size: 2rem;
               padding-bottom: 2rem; }
