@@ -42,7 +42,7 @@ class Ui {
         }
       }
       div.innerHTML += `<h1>${tab[i].dt_txt.substring(5, 16)}</h1>`;
-      div.innerHTML += `<img src= 'https://openweathermap.org/img/wn/${icon}@2x.png'>`;
+      div.innerHTML += `<img src= 'https://openweathermap.org/img/wn/${icon}@2x.png' alt='weather hour image'>`;
       if (unit === 'c') {
         div.innerHTML += `<h1 class='slide-temp'>${Math.round(tab[i].main.temp)}&#8451;</h1>`;
       }
