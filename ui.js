@@ -9,7 +9,7 @@ class Ui {
     const pressure = document.querySelector(".pressure");
     city.innerText = data.name;
     country.innerText = data.sys.country;
-    icon.style.backgroundImage = `url('http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png')`;
+    icon.style.backgroundImage = `url('https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png')`;
     temp.innerHTML = `${Math.round(data.main.temp)} &#8451;`;
     humidity.innerText = `${data.main.humidity}%`;
     wind.innerText = `${data.wind.speed} m/s`;
