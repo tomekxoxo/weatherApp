@@ -1,3 +1,4 @@
+import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js';
 const weather = new Weather();
 const ui = new Ui();
 const button = document.querySelector(".units");
