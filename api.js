@@ -4,14 +4,22 @@ class Weather {
   }
   async apiByGeo(lat, long, units = "metric") {
     const req = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=${units}&appid=${this.apiKey}`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=${units}&appid=${this.apiKey}`,
+      {
+        method: 'GET',
+        mode:'cors'
+      }
     );
     const res = await req.json();
     return res;
   }
   async apiForecast(lat, long, units = "metric") {
     const req = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&units=${units}&appid=${this.apiKey}`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&units=${units}&appid=${this.apiKey}`,
+      {
+        method: 'GET',
+        mode:'cors'
+      }
     );
     const res = await req.json();
     return res;
@@ -19,7 +27,11 @@ class Weather {
   async apiForecastbyCityName(name, units = "metric") {
     try {
       const req = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${name}&units=${units}&appid=${this.apiKey}`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${name}&units=${units}&appid=${this.apiKey}`,
+        {
+          method: 'GET',
+          mode:'cors'
+        }
       );
       if (!req.ok) throw new Error(req.status);
       else {
@@ -33,7 +45,11 @@ class Weather {
   async apiByCityName(name, units = "metric") {
     try {
       const req = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${name}&units=${units}&appid=${this.apiKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${name}&units=${units}&appid=${this.apiKey}`,
+        {
+          method: 'GET',
+          mode:'cors'
+        }
       );
       if (!req.ok) throw new Error(req.status);
       else {
