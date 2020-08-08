@@ -1,6 +1,8 @@
 import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
+import Weather from './api.js';
+import UI from './ui.js';
 const weather = new Weather();
-const ui = new Ui();
+const ui = new UI();
 const button = document.querySelector(".units");
 const burger = document.querySelector(".burger");
 const nav = document.querySelector(".nav");
@@ -85,7 +87,7 @@ function changeCity() {
       .apiForecastbyCityName(inputText.value)
       .then((data) => ui.drawForecast(data))
       .catch((err) => err);
-    Ui.clearInput();
+    ui.clearInput();
   }
 }
 

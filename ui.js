@@ -1,4 +1,4 @@
-class Ui {
+export default class Ui {
   draw(data, unit) {
     const city = document.querySelector(".city");
     const country = document.querySelector(".country-name");
@@ -20,7 +20,7 @@ class Ui {
       wind.innerText = `${data.wind.speed} mph`;
     }
   }
-  drawForecast(data, unit='c') {
+  drawForecast(data, unit = "c") {
     const tab = data.list;
     for (let i = 1; i < tab.length; i++) {
       let div = document.querySelector(`.forecast-${i}`);
@@ -43,16 +43,18 @@ class Ui {
       }
       div.innerHTML += `<h1>${tab[i].dt_txt.substring(5, 16)}</h1>`;
       div.innerHTML += `<img src= 'https://openweathermap.org/img/wn/${icon}@2x.png' alt='weather hour image'>`;
-      if (unit === 'c') {
-        div.innerHTML += `<h1 class='slide-temp'>${Math.round(tab[i].main.temp)}&#8451;</h1>`;
+      if (unit === "c") {
+        div.innerHTML += `<h1 class='slide-temp'>${Math.round(
+          tab[i].main.temp
+        )}&#8451;</h1>`;
+      } else {
+        div.innerHTML += `<h1 class='slide-temp'>${Math.round(
+          tab[i].main.temp
+        )}&#8457;</h1>`;
       }
-      else {
-        div.innerHTML += `<h1 class='slide-temp'>${Math.round(tab[i].main.temp)}&#8457;</h1>`;
-      }
-      
     }
   }
-  static clearInput() {
+  clearInput() {
     document.querySelector(".search-input").value = "";
   }
 }

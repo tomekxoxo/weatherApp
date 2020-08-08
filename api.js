@@ -1,4 +1,4 @@
-class Weather {
+export default class Weather {
   constructor() {
     this.apiKey = "ec6394176af51bfdeaa167c2534ab9c7";
   }
@@ -62,3 +62,4 @@ class Weather {
     }
   }
 }
+
