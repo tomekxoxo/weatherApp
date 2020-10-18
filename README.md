@@ -13,6 +13,7 @@
 
 ## General info
 App created for learning purpose.
+App shows forecast for 16 days every 3 hours each day, and it is using GPS location.
 
 ## Screenshots
 ![Example screenshot](./screenshots/weatherAppFront.jpg)
